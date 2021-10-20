@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--<style>
+        body {
+            background-image: url("./images/bgimage.jpeg");
+            background-repeat: no-repeat;
+           }
+    </style>-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
+  <script src="JtableJavascript.js"></script>
+    
+</head>
+<body>
+    <div class="d-flex justify-content-center">
+    <button type="button" class="btn btn-info mx-2" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Register</button>
+    <button type="button" class="btn btn-info" id="showEmpButton" onclick="showEmployeeList()">Show Employee List</button>
+    
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Personal Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col alert-success py-3 d-none" id="alert-success-register">
+                        Saved Employee details successful.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col alert-success py-3 d-none" id="alert-error-register">
+                        Failed to save Employee Details.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col alert-danger py-3 d-none" id="alert-blank-blank">
+                        Please fill the empty blocks.
+                    </div>
+                </div>
+                <form id="userInput"> 
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Employee ID:</label>
+                        <input type="number" class="form-control" id="empId">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">NAME:</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+         
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">EMAIL:</label>
+                        <input type="text" class="form-control" id="email"></input>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">DEPARTMENT:</label>
+                        <input type="text" class="form-control" id="department"></input>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="saveDetailsMethod()">Submit</button>
+                <button type="button" class="btn btn-info" id="showEmpButton" onclick="showEmployeeList()">Show Employee List</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+<div class="d-none" id="JtableDisplay">
+    <table id="jtable" border="1" class="table table-bordered text-center">
+        <thead>
+            <tr>
+                <th>Employee Id</th>
+                <th>Name</th>
+                <th>Department</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
